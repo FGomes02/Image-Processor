@@ -9,3 +9,17 @@ C:\Users\jplad\Desktop\CG_OpenCV_Base\SS_OpenCV\bin\Debug\CG_OpenCV.pdb
 C:\Users\jplad\Desktop\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.exe
 C:\Users\jplad\Desktop\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.pdb
 C:\Users\jplad\Desktop\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.InputBox.resources
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\bin\Debug\CG_OpenCV.exe.config
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\bin\Debug\CG_OpenCV.exe
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\bin\Debug\CG_OpenCV.pdb
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.csproj.AssemblyReference.cache
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.csproj.SuggestedBindingRedirects.cache
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.AuthorsForm.resources
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.InputBox.resources
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.MainForm.resources
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.Properties.Resources.resources
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.csproj.GenerateResource.cache
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.csproj.CopyComplete
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.exe
+C:\Users\franc\Desktop\Computação Gráfica\Projeto\Programa\CG_OpenCV_Base\CG_OpenCV_Base\SS_OpenCV\obj\Debug\CG_OpenCV.pdb

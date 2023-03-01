@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Emgu.CV.Structure;
 using Emgu.CV;
+using System.Diagnostics.Contracts;
 
 namespace CG_OpenCV
 {
@@ -16,16 +17,32 @@ namespace CG_OpenCV
         /// <param name="img">Image</param>
         public static void Negative(Image<Bgr, byte> img)
         {
-            int x, y;
-
-            Bgr aux;
-            for (y = 0; y < img.Height; y++)
+            unsafe
             {
-                for (x = 0; x < img.Width; x++)
+                MIplImage m = img.MIplImage;
+                byte* dataPtr = (byte*)m.imageData.ToPointer(); // Pointer to the image
+                byte blue, green, red, gray;
+
+                int width = img.Width;
+                int height = img.Height;
+                int nChan = m.nChannels; // number of channels - 3
+                int padding = m.widthStep - m.nChannels * m.width; // alinhament bytes (padding)
+                int x, y;
+
+                int step = m.widthStep;
+
+                if (nChan == 3) // image in RGB
                 {
-                    // acesso directo : mais lento 
-                    aux = img[y, x];
-                    img[y, x] = new Bgr(255 - aux.Blue, 255 - aux.Green, 255 - aux.Red);
+                    for (y = 0; y < height; y++)
+                    {
+                        for (x = 0; x < width; x++)
+                        {
+                            (dataPtr + nChan * x + step * y)[0] = (byte) (255 - (dataPtr + nChan * x + step * y)[0]);
+                            (dataPtr + nChan * x + step * y)[1] = (byte)(255 - (dataPtr + nChan * x + step * y)[1]);
+                            (dataPtr + nChan * x + step * y)[2] = (byte)(255 - (dataPtr + nChan * x + step * y)[2]);
+
+                        }
+                    }
                 }
             }
         }
@@ -81,6 +98,110 @@ namespace CG_OpenCV
                 }
             }
         }
+
+
+
+
+        public static void BrightContrast(Image<Bgr, byte> img, int bright, double contrast) {
+
+            unsafe
+            {
+                MIplImage m = img.MIplImage;
+                byte* dataPtr = (byte*)m.imageData.ToPointer(); // Pointer to the image
+                byte blue, green, red, gray;
+
+                int width = img.Width;
+                int height = img.Height;
+                int nChan = m.nChannels; // number of channels - 3
+                int padding = m.widthStep - m.nChannels * m.width; // alinhament bytes (padding)
+                int x, y;
+
+                int step = m.widthStep;
+                int valor;
+
+                if (nChan == 3) // image in RGB
+                {
+                    for (y = 0; y < height; y++)
+                    {
+                        for (x = 0; x < width; x++)
+                        {
+                            //BLUE
+                            valor = (int)Math.Round((dataPtr + nChan * x + step * y)[0] * contrast + bright);
+
+                            if (valor < 0) {
+                                valor = 0;
+                            } else if (valor > 255) {
+                                valor = 255;
+                            }
+
+                            (dataPtr + nChan * x + step * y)[0] = (byte)valor;
+
+
+                            //GREEN
+                            valor = (int)Math.Round((dataPtr + nChan * x + step * y)[1] * contrast + bright);
+
+                            if (valor < 0)
+                            {
+                                valor = 0;
+                            }
+                            else if (valor > 255)
+                            {
+                                valor = 255;
+                            }
+
+                            (dataPtr + nChan * x + step * y)[1] = (byte)valor;
+
+
+                            //RED
+                            valor = (int)Math.Round((dataPtr + nChan * x + step * y)[2] * contrast + bright);
+
+                            if (valor < 0)
+                            {
+                                valor = 0;
+                            }
+                            else if (valor > 255)
+                            {
+                                valor = 255;
+                            }
+
+                            (dataPtr + nChan * x + step * y)[2] = (byte)valor;
+                        } 
+                    }
+                }
+            }
+        }
+
+        public static void RedChannel(Image<Bgr, byte> img) {
+
+            unsafe
+            {
+                MIplImage m = img.MIplImage;
+                byte* dataPtr = (byte*)m.imageData.ToPointer(); // Pointer to the image
+                byte blue, green, red, gray;
+
+                int width = img.Width;
+                int height = img.Height;
+                int nChan = m.nChannels; // number of channels - 3
+                int padding = m.widthStep - m.nChannels * m.width; // alinhament bytes (padding)
+                int x, y;
+
+                int step = m.widthStep;
+                int valor;
+
+                if (nChan == 3) // image in RGB
+                {
+                    for (y = 0; y < height; y++)
+                    {
+                        for (x = 0; x < width; x++)
+                        {
+                            (dataPtr + nChan * x + step * y)[0] = (dataPtr + nChan * x + step * y)[2];
+                            (dataPtr + nChan * x + step * y)[1] = (dataPtr + nChan * x + step * y)[2];
+                        }
+                    }
+                }
+            }
+        }
+
 
 
     }
